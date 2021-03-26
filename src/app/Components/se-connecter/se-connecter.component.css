@@ -1,0 +1,88 @@
+.login-block{
+    background: #3931af;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #00c6ff, #3931af);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #00c6ff, #3931af); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    float: left;
+    width: 100%;
+    padding : 50px 0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+.container{
+    background: #fff;
+    border-radius: 10px; /* **** */
+    box-shadow: 15px 20px 0px rgba(0,0,0,0.1);
+}
+.banner-sec{
+    min-height: 500px; 
+    border-radius: 0 10px 10px 0; 
+    padding: 0;
+}
+.banner-sec img{    
+        width: 960px;
+        height: 557px    
+}
+.carousel-inner{
+    border-radius: 0 10px 10px 0;
+}
+.carousel-caption{
+    text-align: left;
+    left: 5%;
+}
+.login-sec{
+    padding: 50px 30px; 
+    position: relative;
+}
+.login-sec .copy-text{
+    position: absolute; 
+    width: 80%; 
+    bottom: 20px; 
+    font-size: 13px; 
+    text-align: center;
+}
+.login-sec .copy-text i{
+    color:#00c6ff;
+}
+.login-sec .copy-text a{
+    color:#3931af;
+}
+.login-sec h2{
+    margin-bottom: 30px; 
+    font-weight: 800; 
+    font-size: 30px; 
+    color: #3931af;
+}
+.login-sec h2:after{
+    content:" "; 
+    width: 80px; 
+    height: 5px; 
+    background:#00c6ff; 
+    display: block; 
+    margin-top: 20px; 
+    border-radius: 3px; 
+    margin-left: auto;
+    margin-right: auto
+}
+.btn-login{
+    float: right;
+    margin-top: 25%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    background: #3931af;
+    color: #fff;
+    font-weight: 400;
+    width: 40%;
+    cursor: pointer;
+}
+.underlineHover:after {
+    display: block;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 2px;
+    background-color: #56baed;
+    content: "";
+    transition: width 0.2s;
+  }
+
