@@ -1,283 +1,487 @@
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css"
+    integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+    integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+
 <div class="container">
     <div class="row">
-        <div class="col-lg-8">
-            <div class="card z-depth-3">
-                <div class="card-body">
 
-                    <!-- debut de partie "titre de page" -->
-                    <ul class="nav nav-pills nav-pills-primary nav-justified">
-                        <li class="nav-item">
-                            <a href="javascript:void();" data-target="#profile" data-toggle="pill"
-                                class="nav-link active show"><i class="icon-user"></i> <span
-                                    class="hidden-xs">Profile</span></a>
+
+        <div class="col-lg-8 col-xl-8 z-depth-3">
+            <!-- <div class="card z-depth-3">
+                 <div class="card-body"> hedhom idha n7ebou nrodouha sous forme de card-->
+
+            <div class="tab-block">
+
+                <!-- debut partie "titre des pages" -->
+                <ul class="nav nav-tabs">
+                    <li>
+                        <a href="#profil" data-toggle="tab" aria-expanded="true" class="nav-link ml-0">
+                            <i class="mdi mdi-face-profile mr-1"></i>Profil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#modifications" data-toggle="tab" aria-expanded="false" class="nav-link">
+                            <i class="fa fa-edit"></i> Modifications
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#compte" data-toggle="tab" aria-expanded="false" class="nav-link">
+                            <i class="fa fa-fw fa-cog mr-1"></i>Compte
+                        </a>
+                    </li>
+                </ul>
+                <!-- fin partie "titre des pages" -->
+
+                <div class="tab-content">
+
+                    <div class="tab-pane show active" id="profil">
+
+                        <h5 class="mb-3">Candidat Profile</h5>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h6>Nom</h6>
+                                    <label>
+                                        {{profil.nom}}
+                                    </label>
+                                    
+                                </div>
+                                <div class="col-md-4">
+                                    <h6>Prénom</h6>
+                                    <label>
+                                        {{profil.prenom}}
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <h6>Téléphone</h6>
+                                    <label>
+                                        {{profil.telephone}}
+                                    </label>
+                                </div>
+                            </div> 
+                            <div class="row">  
+                                <div class="col-md-4">
+                                    <h6>Email</h6>
+                                    <label>
+                                        {{profil.email}}
+                                    </label>
+                                </div> 
+                                <div class="col-md-4">
+                                    <h6>Date de naissance</h6>
+                                    <label>
+                                        {{profil.dateNaissance}}
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <h6>Sexe</h6>
+                                    <label>
+                                        {{profil.sexe}}
+                                    </label>
+                                </div>
+                                
+                            </div>  
+                            <div class="row"> 
+                                <div class="col-md-4">
+                                    <h6>Adresse</h6>
+                                    <label>
+                                        {{profil.adresse}}
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <h6>Pays</h6>
+                                    <label>
+                                        {{profil.pays}}
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <h6>Interet</h6>
+                                    <label>
+                                        {{profil.interet}}
+                                    </label>
+                                </div>
+                            </div> 
+                                
+
+                   <!--  <h5 class="mb-4 text-uppercase"><i class="mdi mdi-briefcase mr-1"></i>
+                        Experience</h5>
+
+                    <ul class="list-unstyled timeline-sm">
+                        <li class="timeline-sm-item">
+
+
+
+
+
+                            
+                            <span class="timeline-sm-date">2015 - 19</span>
+                            <h5 class="mt-0 mb-1">Lead designer / Developer</h5>
+                            <p>websitename.com</p>
+                            <p class="text-muted mt-2">Everyone realizes why a new common language
+                                would be desirable: one could refuse to pay expensive translators.
+                                To achieve this, it would be necessary to have uniform grammar,
+                                pronunciation and more common words.</p>
+
                         </li>
-                        <li class="nav-item">
-                            <a href="javascript:void();" data-target="#modifications" data-toggle="pill"
-                                class="nav-link"><i class="icon-note"></i> <span
-                                    class="hidden-xs">Modifications</span></a>
+                        <li class="timeline-sm-item">
+                            <span class="timeline-sm-date">2012 - 15</span>
+                            <h5 class="mt-0 mb-1">Senior Graphic Designer</h5>
+                            <p>Software Inc.</p>
+                            <p class="text-muted mt-2">If several languages coalesce, the grammar
+                                of the resulting language is more simple and regular than that of
+                                the individual languages. The new common language will be more
+                                simple and regular than the existing European languages.</p>
                         </li>
-                        <li class="nav-item">
-                            <a href="javascript:void();" data-target="#modifications_user" data-toggle="pill"
-                                class="nav-link"><i class="icon-note"></i> <span class="hidden-xs">Information
-                                    confidentielle </span></a>
+                        <li class="timeline-sm-item">
+                            <span class="timeline-sm-date">2010 - 12</span>
+                            <h5 class="mt-0 mb-1">Graphic Designer</h5>
+                            <p>Coderthemes LLP</p>
+                            <p class="text-muted mt-2 mb-0">The European languages are members of
+                                the same family. Their separate existence is a myth. For science
+                                music sport etc, Europe uses the same vocabulary. The languages
+                                only differ in their grammar their pronunciation.</p>
                         </li>
                     </ul>
-                    <!-- fin de partie "titre de page" -->
 
-                    <!-- debut de partie "contenu de page" -->
-                    <div class="tab-content p-3">
+                    <h5 class="mb-3 mt-4 text-uppercase"><i class="mdi mdi-cards-variant mr-1"></i>
+                        Projects</h5>
+                    <div class="table-responsive">
+                        <table class="table table-borderless mb-0">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Project Name</th>
+                                    <th>Start Date</th>
+                                    <th>Due Date</th>
+                                    <th>Status</th>
+                                    <th>Clients</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>App design and development</td>
+                                    <td>01/01/2015</td>
+                                    <td>10/15/2018</td>
+                                    <td><span class="badge badge-info">Work in Progress</span></td>
+                                    <td>Halette Boivin</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Coffee detail page - Main Page</td>
+                                    <td>21/07/2016</td>
+                                    <td>12/05/2018</td>
+                                    <td><span class="badge badge-success">Pending</span></td>
+                                    <td>Durandana Jolicoeur</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Poster illustation design</td>
+                                    <td>18/03/2018</td>
+                                    <td>28/09/2018</td>
+                                    <td><span class="badge badge-pink">Done</span></td>
+                                    <td>Lucas Sabourin</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Drinking bottle graphics</td>
+                                    <td>02/10/2017</td>
+                                    <td>07/05/2018</td>
+                                    <td><span class="badge badge-purple">Work in Progress</span></td>
+                                    <td>Donatien Brunelle</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Landing page design - Home</td>
+                                    <td>17/01/2017</td>
+                                    <td>25/05/2021</td>
+                                    <td><span class="badge badge-warning">Coming soon</span></td>
+                                    <td>Karel Auberjo</td>
+                                </tr>
 
-                        <!-- debut de page "profile" -->
-                        <!-- <div class="tab-pane active show" id="profile">
-                            <h5 class="mb-3">User Profile</h5>
+                            </tbody>
+                        </table>
+                    </div>-->
+
+                </div> 
+                    <!-- end timeline content-->
+
+                    <!-- debut partie modifications -->
+                    <div class="tab-pane" id="modifications">
+                        <form [formGroup]="modifCandidatForm">
+                            <h5 class="mb-3 text-uppercase bg-light p-2"><i class="mdi mdi-account-circle mr-1"></i>
+                                Information Personnelle</h5>
+                            
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="btn btn-info">
+                                            <i class="fa fa-fw fa-camera"></i>
+                                            Changer la Photo
+                                            <input type="file" style="display : none;" name="file">
+                                        </label>
+                                    </div> <!-- fin col -->
+                                </div> <!-- fin row -->
+    
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h6>About</h6>
-                                    <p>
-                                        Web Designer, UI/UX Engineer
-                                    </p>
-                                    <h6>Hobbies</h6>
-                                    <p>
-                                        Indie music, skiing and hiking. I love the great outdoors.
-                                    </p>
+                                    <div class="form-group">
+                                        <label for="nom">Nom :</label>
+                                        <input type="text" formControlName="nom" class="form-control" id="nom"
+                                            placeholder="Entrer votre nom *"
+                                            [ngClass]="{'is-invalid': submitted && modifCandidatForm.controls.nom.errors, 'is-valid': !modifCandidatForm.controls.nom.errors}">
+                                        <div *ngIf="submitted && modifCandidatForm.controls.nom.errors"
+                                            class="invalid-feedback d-block">
+                                            <div *ngIf="modifCandidatForm.controls.nom.errors.required">Ce champ est
+                                                obligatoire!
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <h6>Recent badges</h6>
-                                    <a href="javascript:void();" class="badge badge-dark badge-pill">html5</a>
-                                    <a href="javascript:void();" class="badge badge-dark badge-pill">react</a>
-                                    <a href="javascript:void();" class="badge badge-dark badge-pill">codeply</a>
-                                    <a href="javascript:void();" class="badge badge-dark badge-pill">angularjs</a>
-                                    <a href="javascript:void();" class="badge badge-dark badge-pill">css3</a>
-                                    <a href="javascript:void();" class="badge badge-dark badge-pill">jquery</a>
-                                    <a href="javascript:void();" class="badge badge-dark badge-pill">bootstrap</a>
-                                    <a href="javascript:void();"
-                                        class="badge badge-dark badge-pill">responsive-design</a>
-                                    <hr>
-                                    <span class="badge badge-primary"><i class="fa fa-user"></i> 900 Followers</span>
-                                    <span class="badge badge-success"><i class="fa fa-cog"></i> 43 Forks</span>
-                                    <span class="badge badge-danger"><i class="fa fa-eye"></i> 245 Views</span>
-                                </div>
-                                <div class="col-md-12">
-                                    <h5 class="mt-2 mb-3"><span class="fa fa-clock-o ion-clock float-right"></span>
-                                        Recent Activity</h5>
-                                    <table class="table table-hover table-striped">
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <strong>Abby</strong> joined ACME Project Team in
-                                                    <strong>`Collaboration`</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <strong>Gary</strong> deleted My Board1 in
-                                                    <strong>`Discussions`</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <strong>Kensington</strong> deleted MyBoard3 in
-                                                    <strong>`Discussions`</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <strong>John</strong> deleted My Board1 in
-                                                    <strong>`Discussions`</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <strong>Skell</strong> deleted his post Look at Why this is.. in
-                                                    <strong>`Discussions`</strong>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div> -->
-                        <!-- fin de page "profile" -->
+                                    <div class="form-group">
+                                        <label for="prenom">Prénom :</label>
+                                        <input type="text" formControlName="prenom" class="form-control" id="prenom"
+                                            placeholder="Entrer votre prénom *"
+                                            [ngClass]="{'is-invalid': submitted && modifCandidatForm.controls.prenom.errors, 'is-valid': !modifCandidatForm.controls.prenom.errors}">
+                                        <div *ngIf="submitted && modifCandidatForm.controls.prenom.errors"
+                                            class="invalid-feedback d-block">
+                                            <div *ngIf="modifCandidatForm.controls.prenom.errors.required">Ce champ
+                                                est obligatoire!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- fin col -->
+                            </div> <!-- fin row -->
 
-                        <!-- debut de page "modifications" -->
-                        <div class="tab-pane" id="modifications">
-                            <form [formGroup]="modifForm">
-                                <label class="btn btn-info">
-                                    <i class="material-icons">&#xE24D;</i>
-                                    Changer image
-                                    <input type="file" style="display: none;" name="file">
-                                </label>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Nom :</label>
-                                    <div class="col-lg-9">
-                                        <input type="text" formControlName="nom" class="form-control"
-                                            placeholder="Votre nom *"
-                                            [ngClass]="{'is-invalid': submitted && modifForm.controls.nom.errors, 'is-valid': submitted && !modifForm.controls.nom.errors}">
-                                        <div *ngIf="submitted && modifForm.controls.nom.errors"
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="adresse">Adresse :</label>
+                                        <textarea formControlName="adresse" class="form-control" id="adresse" rows="4"
+                                            placeholder="Entrer votre adresse... *"
+                                            [ngClass]="{'is-invalid': submitted && modifCandidatForm.controls.adresse.errors, 'is-valid': !modifCandidatForm.controls.adresse.errors}"></textarea>
+                                        <div *ngIf="submitted && modifCandidatForm.controls.adresse.errors"
                                             class="invalid-feedback d-block">
-                                            <div *ngIf="modifForm.controls.nom.errors.required">Ce champ est
-                                                obligatoire!
+                                            <div *ngIf="modifCandidatForm.controls.adresse.errors.required">Ce champ
+                                                est obligatoire!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- fin col -->
+                            </div> <!-- fin row -->
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="pays">Pays :</label>
+                                        <select formControlName="pays" class="form-control" id="pays"
+                                            [ngClass]="{'is-invalid': submitted && modifCandidatForm.controls.pays.errors, 'is-valid': !modifCandidatForm.controls.pays.errors}">
+                                            <option selected disabled value="">Pays</option>
+                                            <option  *ngFor="let country of countries">{{country}}
+                                            </option>
+                                        </select>
+                                        <div class="invalid-feedback d-block"
+                                            *ngIf="submitted && modifCandidatForm.controls.pays.errors.required">
+                                            Ce champ est obligatoire!
+                                        </div>
+                                    </div>
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="naissance">Date de naissance :</label>
+                                        <div>
+                                            <input type="date" formControlName="dateNaissance" id="naissance"
+                                                value="2021-01-01" min="1950-01-01" max="2020-12-31">
+                                            <div class="invalid-feedback d-block"
+                                                *ngIf="submitted && modifCandidatForm.controls.dateNaissance.errors.required">
+                                                Ce champ est obligatoire!
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Prénom :</label>
-                                    <div class="col-lg-9">
-                                        <input type="text" formControlName="prenom" class="form-control"
-                                            placeholder="Votre prénom *"
-                                            [ngClass]="{'is-invalid': submitted && modifForm.controls.prenom.errors, 'is-valid': submitted && !modifForm.controls.prenom.errors}">
-                                        <div *ngIf="submitted && modifForm.controls.prenom.errors"
-                                            class="invalid-feedback d-block">
-                                            <div *ngIf="modifForm.controls.prenom.errors.required">Ce champ est
-                                                obligatoire!
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Numéro de
-                                        téléphone :</label>
-                                    <div class="col-lg-9">
-                                        <input type="number" formControlName="telephone" class="form-control"
-                                            placeholder="00 000 000 *"
-                                            [ngClass]="{'is-invalid': submitted && modifForm.controls.telephone.errors, 'is-valid': submitted && !modifForm.controls.telephone.errors}">
-                                        <div *ngIf="submitted && modifForm.controls.telephone.errors"
-                                            class="invalid-feedback d-block">
-                                            <div *ngIf="modifForm.controls.telephone.errors.required">Ce champ est
-                                                obligatoire!
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Date de naissance
-                                        :</label>
-                                    <div class="col-lg-3">
-                                    
-                                        <input type="date" formControlName="naissance" value="2021-03-26"
-                                            min="1950-01-01" max="2020-12-31">
-                                            <div class="invalid-feedback d-block">
-                                                <div *ngIf="submitted && modifForm.controls.naissance.errors.required">Ce champ est
-                                                    obligatoire!
-                                                </div>
-                                            </div>
-                                    </div>
-                                    
-                                    <div class="col-lg-2"></div>
-                                    <div class="col-lg-3">
-                                        <div class="maxl">
-                                            <label class="radio inline" formControlName="gender">
-                                                <input type="radio" name="gender" checked>
-                                                <span> Homme </span>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Sexe :</label>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" value="Homme" formControlName="sexe">
+                                                Homme
                                             </label>
-                                            <label class="radio inline">
-                                                <input type="radio" name="gender">
-                                                <span> Femme </span>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" value="Femme" formControlName="sexe">
+                                                Femme
                                             </label>
                                         </div>
                                         <div class="invalid-feedback d-block">
-                                            <div *ngIf="modifForm.controls.gender.errors.required">Ce champ est
+                                            <div *ngIf="submitted && modifCandidatForm.controls['sexe'].invalid">Ce
+                                                champ est obligatoire!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- fin col -->
+                            </div> <!-- fin row -->
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="tele">Numéro de téléphone :</label>
+                                        <input type="text" formControlName="telephone" class="form-control" id="tele"
+                                            placeholder="Entrer votre numéro *"
+                                            [ngClass]="{'is-invalid': submitted && modifCandidatForm.controls.telephone.errors, 'is-valid': !modifCandidatForm.controls.telephone.errors}">
+                                        <div *ngIf="submitted && modifCandidatForm.controls.telephone.errors"
+                                            class="invalid-feedback d-block">
+                                            <div *ngIf="modifCandidatForm.controls.telephone.errors.required">Ce
+                                                champ est obligatoire!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="interet">Interet :</label>
+                                        <select formControlName="interet" class="form-control" id="interet"
+                                            [ngClass]="{'is-invalid': submitted && modifCandidatForm.controls.interet.errors, 'is-valid': !modifCandidatForm.controls.interet.errors}">
+                                            <option selected disabled value="">Interet</option>
+                                            <option value="freelance">Mission freelance</option>
+                                            <option value="emploi">Emploi</option>
+                                        </select>
+                                        <div class="invalid-feedback d-block"
+                                            *ngIf="submitted && modifCandidatForm.controls.interet.errors.required">
+                                            Ce champ est obligatoire!
+                                        </div>
+                                    </div>
+                                </div> <!-- fin col -->
+                            </div> <!-- fin row -->
+
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary waves-effect waves-light mt-2"
+                                    (click)="modifCandidat()"><i class="mdi mdi-content-save"></i> Enregistrer</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- fin partie modifications -->
+
+                    <!-- debut partie compte -->
+                    <div class="tab-pane" id="compte">
+                        <form [formGroup]="modifConfidForm">
+                            <h5 class="mb-3 text-uppercase bg-light p-2"><i class="mdi mdi-account-circle mr-1"></i>
+                                Modifier le contact du compte</h5>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="email">Email :</label>
+                                        <input type="email" formControlName="email" class="form-control" id="email"
+                                            placeholder="Entrer votre nouvelle adresse Email *"
+                                            [ngClass]="{'is-invalid': submitted && modifConfidForm.controls.email.errors, 'is-valid': !modifConfidForm.controls.email.errors}">
+                                        <div *ngIf="submitted && modifConfidForm.controls.email.errors"
+                                            class="invalid-feedback d-block">
+                                            <div *ngIf="modifConfidForm.controls.email.errors.required">Ce champ est
+                                                obligatoire!
+                                            </div>
+                                            
+                                        </div>
+                                        <div *ngIf="modifConfidForm.controls.email.errors"
+                                            class="invalid-feedback d-block">
+                                            
+                                            <div *ngIf="modifConfidForm.controls.email.errors.email">Format
+                                                invalide!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
+                            <h5 class="mb-3 text-uppercase bg-light p-2"><i class="mdi mdi-account-circle mr-1"></i>
+                                Modifier le Mot de passe du compte</h5>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="ancienPass">Ancien Mot de passe :</label>
+                                        <input type="password" formControlName="ancienPass" class="form-control"
+                                            id="ancienPass" placeholder="Entrer votre ancien mot de passe *"
+                                            [ngClass]="{'is-invalid': submitted && modifConfidForm.controls.ancienPass.errors, 'is-valid': !modifConfidForm.controls.ancienPass.errors}">
+                                        <div *ngIf="submitted && modifConfidForm.controls.ancienPass.errors"
+                                            class="invalid-feedback d-block">
+                                            <div *ngIf="modifConfidForm.controls.ancienPass.errors.required">Ce champ est
                                                 obligatoire!
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Pays :</label>
-                                    <div class="col-lg-9">
-                                        <select formControlName="country" class="form-control">
-                                            <option selected disabled>Pays</option>
-                                            <option value="country" *ngFor="let country of countries">{{country}}
-                                            </option>
-                                        </select>
-                                        <div *ngIf="submitted && modifForm.controls.country.errors.required"
-                                            class="invalid-feedback d-block"> Ce champ est obligatoire! </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Adresse :</label>
-                                    <div class="col-lg-9">
-                                        <textarea formControlName="adresse" class="form-control"
-                                            placeholder="Rue ... ville ... *"
-                                            [ngClass]="{'is-invalid': submitted && modifForm.controls.adresse.errors, 'is-valid': submitted &&  !modifForm.controls.adresse.errors}"></textarea>
-                                        <div *ngIf="submitted && modifForm.controls.adresse.errors"
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="pass">Nouveau Mot de passe :</label>
+                                        <input type="password" formControlName="pass" class="form-control" id="pass"
+                                            placeholder="Entrer votre nouveau mot de passe *"
+                                            [ngClass]="{'is-invalid': submitted && modifConfidForm.controls.pass.errors, 'is-valid': !modifConfidForm.controls.pass.errors}">
+                                        <div *ngIf="submitted && modifConfidForm.controls.pass.errors"
                                             class="invalid-feedback d-block">
-                                            <div *ngIf="modifForm.controls.adresse.errors.required">Ce champ est
-                                                obligatoire
+                                            <div *ngIf="modifConfidForm.controls.pass.errors.required">Ce champ est
+                                                obligatoire!
+                                            </div>
+                                            
+                                        </div>
+                                        <div *ngIf=" modifConfidForm.controls.pass.errors"
+                                            class="invalid-feedback d-block">
+                                            <div *ngIf="modifConfidForm.controls.pass.errors.pattern">Le mot de passe doit
+                                                avoir de 8 à 15 caractéres, au moins une lettre miniscule et une lettre
+                                                majuscule, au moins un chiffre, au moins un ( $ , @ , % , * , + , - , _
+                                                , !)
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Interet :</label>
-                                    <div class="col-lg-9" formControlName="interet">
-                                        <select class="form-control">
-                                            <option value="freelance">Mission freelance</option>
-                                            <option value="emploi">Emploi</option>
-                                        </select>
-                                        <div *ngIf="submitted && modifForm.controls.interet.errors.required"
-                                            class="invalid-feedback d-block"> Ce champ est obligatoire! </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="confirmPass">Confirmation Mot de passe :</label>
+                                        <input type="password" formControlName="confirmPass" class="form-control"
+                                            id="confirmPass" placeholder="Confirmer votre Mot de passe *"
+                                            [ngClass]="{'is-invalid': submitted && modifConfidForm.controls.confirmPass.errors, 'is-valid': !modifConfidForm.controls.confirmPass.errors && !modifConfidForm?.errors?.notSame}">
+                                        <div *ngIf="submitted && modifConfidForm.controls.confirmPass.errors"
+                                            class="invalid-feedback d-block">
+                                            <div *ngIf="modifConfidForm.controls.confirmPass.errors.required">Ce champ
+                                                est obligatoire!
+                                            </div>
+                                            
+                                        </div>
+                                        <div  class="invalid-feedback d-block">
+                                            <div *ngIf="modifConfidForm?.errors?.notSame">Les mots de
+                                            passes ne sont pas identiques!
+                                            </div>
+                                        
+                                        </div>
                                     </div>
-                                </div>
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->
 
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label"></label>
-                                    <div class="col-lg-9">
-                                        <input type="reset" class="btn btn-default" value="Annuler">
-                                        <button class="btn btn-info" (click)="modifCandidat()">Modifier</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- debut de page "modifications" -->
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary waves-effect waves-light mt-2"
+                                    (click)="modifConfidCandidat()"><i class="mdi mdi-content-save"></i>
+                                    Enregistrer</button>
+                            </div>
 
-                        <!-- debut de page "modifications" -->
-                        <div class="tab-pane" id="modifications_user">
-                            <form>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Email</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="text" placeholder="email@xemple.com">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Ancienne mot de
-                                        passe</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="ancienne_pass" placeholder="*******">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Nouvelle mot de
-                                        passe</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="nouvelle_pass" placeholder="*******">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Confirmer mot de
-                                        passe</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="confirm_pass" placeholder="*******">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label"></label>
-                                    <div class="col-lg-9">
-                                        <input type="reset" class="btn btn-secondary" value="Cancel">
-                                        <input type="button" class="btn btn-primary" value="Save Changes">
-                                    </div>
-                                </div>
-
-                            </form>
-                        </div>
+                        </form>
                     </div>
-                    <!-- fin de partie "contenu de page" -->
+                    <!-- fin partie compte -->
 
-                </div>
-            </div>
-        </div>
+                </div> <!-- fin tab-content-->
 
-    </div>
+            </div> <!-- fin tab-block-->
+
+        </div> <!-- fin col -->
+
+    </div> <!-- fin row-->
+    <!-- </div>
+    </div> -->
 </div>

@@ -12,11 +12,11 @@ export class AuthenticationService {
    private  baseUrl = 'http://localhost:8080/auth/';
 
   // call for register backend api with a RegisterRequest in parameter(username + motDePasse)
-  register(registerRequest) {
-    return this.httpClient.post<any>(this.baseUrl+'register/',registerRequest).pipe(
+  registerCandidat(registerCandidatRequest) {
+    return this.httpClient.post<any>(this.baseUrl+'register/candidat/',registerCandidatRequest).pipe(
       map(
         Data => {
-          if(Data.message === "User registered successfully!"){
+          if(Data.message === "Candidat registered successfully!"){
             this.router.navigate(['login'])
           }
           else{
@@ -29,6 +29,27 @@ export class AuthenticationService {
       )
     );
   }
+
+  
+  // call for register backend api with a RegisterRequest in parameter(username + motDePasse)
+  registerEntreprise(registerEntrepriseRequest) {
+    return this.httpClient.post<any>(this.baseUrl+'register/entreprise/',registerEntrepriseRequest).pipe(
+      map(
+        Data => {
+          if(Data.message === "Entreprise registered successfully!"){
+            this.router.navigate(['login'])
+          }
+          else{
+            alert("Email a été déja utilisé!");
+          }
+          
+          return Data;
+         }
+
+      )
+    );
+  }
+
   // call for authentication backend api with a loginRequest in parameter(username + motDePasse)
   authenticate(loginRequest) {
     return this.httpClient.post<any>(this.baseUrl+'login/',loginRequest).pipe(

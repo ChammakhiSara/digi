@@ -37,7 +37,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" formControlName="nom" class="form-control" placeholder="Nom *"
-                                        [ngClass]="{'is-invalid': submitted && candidatForm.controls.nom.errors, 'is-valid': submitted && !candidatForm.controls.nom.errors}">
+                                        [ngClass]="{'is-invalid': submitted && candidatForm.controls.nom.errors, 'is-valid':!candidatForm.controls.nom.errors}">
                                     <div *ngIf="submitted && candidatForm.controls.nom.errors"
                                         class="invalid-feedback d-block">
                                         <div *ngIf="candidatForm.controls.nom.errors.required">Ce champ est obligatoire!
@@ -47,7 +47,7 @@
                                 <div class="form-group">
                                     <input type="text" formControlName="telephone" class="form-control"
                                         placeholder="Téléphone *"
-                                        [ngClass]="{'is-invalid': submitted && candidatForm.controls.telephone.errors, 'is-valid': submitted && !candidatForm.controls.telephone.errors}">
+                                        [ngClass]="{'is-invalid': submitted && candidatForm.controls.telephone.errors, 'is-valid': !candidatForm.controls.telephone.errors}">
                                     <div *ngIf="submitted && candidatForm.controls.telephone.errors"
                                         class="invalid-feedback d-block">
                                         <div *ngIf="candidatForm.controls.telephone.errors.required">Ce champ est
@@ -58,12 +58,16 @@
                                 <div class="form-group">
                                     <input type="password" formControlName="pass" class="form-control"
                                         placeholder="Mot de passe *"
-                                        [ngClass]="{'is-invalid': submitted && candidatForm.controls.pass.errors, 'is-valid': submitted && !candidatForm.controls.pass.errors}">
+                                        [ngClass]="{'is-invalid': submitted && candidatForm.controls.pass.errors, 'is-valid':!candidatForm.controls.pass.errors}">
                                     <div *ngIf="submitted && candidatForm.controls.pass.errors"
                                         class="invalid-feedback d-block">
                                         <div *ngIf="candidatForm.controls.pass.errors.required">Ce champ est
                                             obligatoire!
                                         </div>
+                                        
+                                    </div>
+                                    <div *ngIf="candidatForm.controls.pass.errors"
+                                     class="invalid-feedback d-block">
                                         <div *ngIf="candidatForm.controls.pass.errors.pattern">Le mot de passe doit
                                             avoir de 8 à 15 caractéres, au moins une lettre miniscule et une lettre
                                             majuscule, au moins un chiffre, au moins un ( $ , @ , % , * , + , - , _ , !)
@@ -73,18 +77,21 @@
                                 <div class="form-group">
                                     <input type="password" formControlName="confirmPass" class="form-control"
                                         placeholder="Confirmation mot de passe *"
-                                        [ngClass]="{'is-invalid': submitted && candidatForm.controls.confirmPass.errors, 'is-valid': submitted && !candidatForm.controls.confirmPass.errors}">
+                                        [ngClass]="{'is-invalid': submitted && candidatForm.controls.confirmPass.errors, 'is-valid': !candidatForm.controls.confirmPass.errors && !candidatForm?.errors?.notSame}">
                                     <div *ngIf="submitted && candidatForm.controls.confirmPass.errors"
                                         class="invalid-feedback d-block">
                                         <div *ngIf="candidatForm.controls.confirmPass.errors.required">Ce champ est
                                             obligatoire!
                                         </div>
+                                    </div>
+                                    <div  class="invalid-feedback d-block">
+                                    
                                         <div *ngIf="candidatForm?.errors?.notSame">Les mots de
                                             passes ne sont pas identiques!
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <div class="maxl">
                                         <label class="radio inline" formControlName="gender">
                                             <input type="radio" checked>
@@ -97,6 +104,25 @@
                                     </div>
                                     <div class="invalid-feedback d-block">
                                         <div *ngIf="candidatForm.controls.gender.errors.required">Ce champ est
+                                            obligatoire!
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div class="form-group">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" value="Male" formControlName="gender">
+                                            Homme
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" value="Female" formControlName="gender">
+                                            Femme
+                                        </label>
+                                    </div>
+                                    <div class="invalid-feedback d-block">
+                                        <div *ngIf="submitted && candidatForm.controls['gender'].invalid">Ce champ est
                                             obligatoire!
                                         </div>
                                     </div>
@@ -117,7 +143,7 @@
                                 <div class="form-group">
                                     <select formControlName="country" class="form-control">
                                         <option selected disabled value="">Pays</option>
-                                        <option value="country" *ngFor="let country of countries">{{country}}</option>
+                                        <option  *ngFor="let country of countries">{{country}}</option>
                                     </select>
                                     <div *ngIf="submitted && candidatForm.controls.country.errors?.required"
                                         class="invalid-feedback d-block"> Ce champ est obligatoire!!</div>
@@ -131,7 +157,13 @@
                                         <div *ngIf="candidatForm.controls.email.errors.required">Ce champ est
                                             obligatoire!
                                         </div>
-                                        <div *ngIf="submitted && candidatForm.controls.email.errors.email">Format invalide!</div>
+                                        
+                                    </div>
+                                    <div *ngIf="candidatForm.controls.email.errors"
+                                        class="invalid-feedback d-block">
+                                      
+                                        <div *ngIf="candidatForm.controls.email.errors.email">Format Email
+                                            invalide!</div>
                                     </div>
                                 </div>
                                 <div>
@@ -153,8 +185,8 @@
                                 <div class="form-group">
                                     <input type="text" formControlName="raisonSociale" class="form-control"
                                         placeholder="Raison sociale *"
-                                        [ngClass]="{'is-invalid': submitted && entrepriseForm.controls.raisonSociale.errors, 'is-valid': submitted && !entrepriseForm.controls.raisonSociale.errors}">
-                                    <div *ngIf="submitted && entrepriseForm.controls.raisonSociale.errors"
+                                        [ngClass]="{'is-invalid': submittedEnt && entrepriseForm.controls.raisonSociale.errors, 'is-valid': !entrepriseForm.controls.raisonSociale.errors}">
+                                    <div *ngIf="submittedEnt && entrepriseForm.controls.raisonSociale.errors"
                                         class="invalid-feedback d-block">
                                         <div *ngIf="entrepriseForm.controls.raisonSociale.errors.required">Ce champ est
                                             obligatoire!
@@ -164,8 +196,8 @@
                                 <div class="form-group">
                                     <input type="text" formControlName="telephone" class="form-control"
                                         placeholder="Téléphone *"
-                                        [ngClass]="{'is-invalid': submitted && entrepriseForm.controls.telephone.errors, 'is-valid': submitted && !entrepriseForm.controls.telephone.errors}">
-                                    <div *ngIf="submitted && entrepriseForm.controls.telephone.errors"
+                                        [ngClass]="{'is-invalid': submittedEnt && entrepriseForm.controls.telephone.errors, 'is-valid': !entrepriseForm.controls.telephone.errors}">
+                                    <div *ngIf="submittedEnt && entrepriseForm.controls.telephone.errors"
                                         class="invalid-feedback d-block">
                                         <div *ngIf="entrepriseForm.controls.telephone.errors.required">Ce champ est
                                             obligatoire!
@@ -175,13 +207,16 @@
                                 <div class="form-group">
                                     <input type="password" formControlName="pass" class="form-control"
                                         placeholder="Mot de passe *"
-                                        [ngClass]="{'is-invalid': submitted && entrepriseForm.controls.pass.errors, 'is-valid': submitted && !entrepriseForm.controls.pass.errors}">
-                                    <div *ngIf="submitted && entrepriseForm.controls.pass.errors"
+                                        [ngClass]="{'is-invalid': submittedEnt && entrepriseForm.controls.pass.errors, 'is-valid': !entrepriseForm.controls.pass.errors}">
+                                    <div *ngIf="submittedEnt && entrepriseForm.controls.pass.errors"
                                         class="invalid-feedback d-block">
                                         <div *ngIf="entrepriseForm.controls.pass.errors.required">Ce champ est
                                             obligatoire!
                                         </div>
-                                        <div *ngIf="entrepriseForm.controls.pass.errors.pattern">Le mot de passe doit
+                                    </div>
+                                    <div *ngIf=" entrepriseForm.controls.pass.errors"
+                                        class="invalid-feedback d-block">
+                                      <div *ngIf="entrepriseForm.controls.pass.errors.pattern">Le mot de passe doit
                                             avoir de 8 à 15 caractéres, au moins une lettre miniscule et une lettre
                                             majuscule, au moins un chiffre, au moins un ( $ , @ , % , * , + , - , _ , !)
                                         </div>
@@ -192,37 +227,47 @@
                                 <div class="form-group">
                                     <input type="email" formControlName="email" class="form-control"
                                         placeholder="Email *"
-                                        [ngClass]="{'is-invalid': submitted && entrepriseForm.controls.email.errors, 'is-valid': submitted && !entrepriseForm.controls.email.errors}">
-                                    <div *ngIf="submitted && entrepriseForm.controls.email.errors"
+                                        [ngClass]="{'is-invalid': submittedEnt && entrepriseForm.controls.email.errors, 'is-valid':!entrepriseForm.controls.email.errors}">
+                                    <div *ngIf="submittedEnt && entrepriseForm.controls.email.errors"
                                         class="invalid-feedback d-block">
                                         <div *ngIf="entrepriseForm.controls.email.errors.required">Ce champ est
                                             obligatoire</div>
-                                        <div *ngIf="entrepriseForm.controls.email.errors.email">Format invalide!</div>
+                                        
+                                    </div>
+                                    <div *ngIf="entrepriseForm.controls.email.errors"
+                                        class="invalid-feedback d-block">
+                                       
+                                        <div *ngIf="entrepriseForm.controls.email.errors.email">Format Email invalide!</div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <select formControlName="country" class="form-control">
                                         <option selected disabled value="">Pays</option>
-                                        <option value="country" *ngFor="let country of countries">{{country}}</option>
+                                        <option *ngFor="let country of countries">{{country}}</option>
                                     </select>
-                                    <div *ngIf="submitted && entrepriseForm.controls.country.errors?.required"
+                                    <div *ngIf="submittedEnt && entrepriseForm.controls.country.errors?.required"
                                         class="invalid-feedback d-block"> Ce champ est obligatoire!!</div>
                                 </div>
 
                                 <div class="form-group">
                                     <input type="password" formControlName="confirmPass" class="form-control"
                                         placeholder="Confirmation mot de passe *"
-                                        [ngClass]="{'is-invalid': submitted && entrepriseForm.controls.confirmPass.errors, 'is-valid': submitted && !entrepriseForm.controls.confirmPass.errors}">
-                                    <div *ngIf="submitted && entrepriseForm.controls.confirmPass.errors"
+                                        [ngClass]="{'is-invalid': submittedEnt && entrepriseForm.controls.confirmPass.errors, 'is-valid': !entrepriseForm.controls.confirmPass.errors && !entrepriseForm?.errors?.notSame}">
+                                    <div *ngIf="submittedEnt && entrepriseForm.controls.confirmPass.errors"
                                         class="invalid-feedback d-block">
                                         <div *ngIf="entrepriseForm.controls.confirmPass.errors.required">Ce champ est
                                             obligatoire!
                                         </div>
-                                        <div *ngIf="entrepriseForm.controls.confirmPass.errors.notSame">Les mots de
+                                       
+                                    </div>
+                                    <div class="invalid-feedback d-block">
+                                       
+                                        <div *ngIf="entrepriseForm?.errors?.notSame">Les mots de
                                             passes ne sont pas identiques!
                                         </div>
                                     </div>
                                 </div>
+
                                 <div>
                                     <span>(*): champs obligatoires</span>
                                 </div>

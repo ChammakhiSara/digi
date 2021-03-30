@@ -13,6 +13,7 @@ export class SessionCandidatComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   LogOut(){
     this.authenticationService.logOut();
     this.router.navigate(['login']);

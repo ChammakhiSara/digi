@@ -14,6 +14,8 @@ import { SessionCandidatComponent } from './Components/Candidat/session-candidat
 import { ProfilCandidat } from './Components/Candidat/profil/profil.component';
 import { ProfilEntreprise } from './Components/Entreprise/profil/profil.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
+import { ProfilService } from './Services/Candidat/profil.service';
+import { ProfilEntrepriseService } from './Services/Entreprise/profil-entreprise.service';
 
 
 @NgModule({
@@ -34,7 +36,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [AuthenticationService,AuthGuardService,JwtAuthHttpInterceptorService],
+  providers: [AuthenticationService,AuthGuardService,JwtAuthHttpInterceptorService,ProfilService,ProfilEntrepriseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
